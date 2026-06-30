@@ -728,18 +728,54 @@ function CTA() {
           Find Jallikattu Soda at a store near you, or partner with us to stock
           the legend.
         </p>
-        <form className="mt-10 max-w-md mx-auto flex gap-2 bg-cream/10 backdrop-blur p-2 rounded-full border border-cream/30">
-          <input
-            type="email"
-            placeholder="your@email.com"
-            className="flex-1 bg-transparent px-4 py-3 text-cream placeholder:text-cream/60 outline-none"
-          />
-          <button
-            type="button"
-            className="rounded-full bg-cream text-primary px-6 py-3 font-bold hover:scale-105 transition-transform"
-          >
-            Notify Me
-          </button>
+        <form
+    onSubmit={(e) => {
+      e.preventDefault();
+      const form = e.currentTarget;
+      const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+      const phone = (form.elements.namedItem("phone") as HTMLInputElement).value;
+      const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+      const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
+
+      const text = `Hi! I'd like to know more about Jallikattu Soda.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`;
+      window.open(`https://wa.me/917448422201?text=${encodeURIComponent(text)}`, "_blank");
+    }}
+    className="mt-10 max-w-md mx-auto flex flex-col gap-3 bg-cream/10 backdrop-blur p-6 rounded-3xl border border-cream/30"
+  >
+    <input
+      name="name"
+      type="text"
+      required
+      placeholder="Your name"
+      className="bg-transparent px-4 py-3 rounded-full text-cream placeholder:text-cream/60 outline-none border border-cream/20 focus:border-saffron"
+    />
+    <input
+      name="phone"
+      type="tel"
+      required
+      placeholder="Phone number"
+      className="bg-transparent px-4 py-3 rounded-full text-cream placeholder:text-cream/60 outline-none border border-cream/20 focus:border-saffron"
+    />
+    <input
+      name="email"
+      type="email"
+      required
+      placeholder="your@email.com"
+      className="bg-transparent px-4 py-3 rounded-full text-cream placeholder:text-cream/60 outline-none border border-cream/20 focus:border-saffron"
+    />
+    <textarea
+      name="message"
+      required
+      placeholder="Your message"
+      rows={4}
+      className="bg-transparent px-4 py-3 rounded-2xl text-cream placeholder:text-cream/60 outline-none border border-cream/20 focus:border-saffron resize-none"
+    />
+    <button
+      type="submit"
+      className="rounded-full bg-cream text-primary px-6 py-3 font-bold hover:scale-105 transition-transform"
+    >
+      Send via WhatsApp
+    </button>
         </form>
         <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm">
           <div>

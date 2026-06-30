@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import favicon from "../assets/fav.ico";
 import appCss from "../styles.css?url";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 function NotFoundComponent() {
   return (
@@ -113,6 +114,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <WhatsAppFloat />
     </QueryClientProvider>
   );
 }
