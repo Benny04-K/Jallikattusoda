@@ -261,7 +261,7 @@ function Hero() {
             ★ EST · 1946 · TAMIL NADU ★
           </div>
           <h1 className="font-display text-6xl md:text-8xl leading-[0.85] drop-shadow-2xl">
-            BREWED IN
+            BREWED INs
             <br />
             <span className="text-saffron">SMOKE.</span>
             <br />
